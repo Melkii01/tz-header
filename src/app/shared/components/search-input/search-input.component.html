@@ -1,0 +1,124 @@
+<div class="search">
+  <div class="search-button" (click)="showSearchInput()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_3_1724)">
+        <path
+          d="M16.5 14H15.71L15.43 13.73C16.41 12.59 17 11.11 17 9.5C17 5.91 14.09 3 10.5 3C6.91 3 4 5.91 4 9.5C4 13.09 6.91 16 10.5 16C12.11 16 13.59 15.41 14.73 14.43L15 14.71V15.5L20 20.49L21.49 19L16.5 14ZM10.5 14C8.01 14 6 11.99 6 9.5C6 7.01 8.01 5 10.5 5C12.99 5 15 7.01 15 9.5C15 11.99 12.99 14 10.5 14Z"
+          fill="white"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_3_1724">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+  <div class="search-block" *ngIf="isShowSearchInput"
+       [@showSearchTrigger]="isShowSearchInput? 'show':'void'"
+       (click)="showSearchParams()">
+    <input class="search-input" type="text" placeholder="Поисковый запрос">
+    <div class="search-parametres" *ngIf="isShowSearchInputParams">
+      <div class="search-history">
+        <div class="search-history-title">История</div>
+        <div class="search-history-items">
+          <a routerLink="/" class="search-history-item">
+            закрепить теги
+          </a>
+
+          <a routerLink="/" class="search-history-item">
+            кнопка
+          </a>
+
+          <a routerLink="/" class="search-history-item">
+            приложение
+          </a>
+
+          <a routerLink="/" class="search-history-item">
+            текстовое поле
+          </a>
+
+          <a routerLink="/" class="search-history-item">
+            выпадающий список
+          </a>
+        </div>
+      </div>
+
+      <div class="search-filter">
+        <div class="search-filter-input">
+          <fieldset>
+            <legend>Автор</legend>
+            <input type="text" placeholder="Имя или должность">
+          </fieldset>
+
+          <div class="search-filter-input-name">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_3_2025)">
+                <path
+                  d="M0 4.00006C0 1.79092 1.79086 6.10352e-05 4 6.10352e-05H20C22.2091 6.10352e-05 24 1.79092 24 4.00006V20.0001C24 22.2092 22.2091 24.0001 20 24.0001H4C1.79086 24.0001 0 22.2092 0 20.0001V4.00006Z"
+                  fill="#EFF1F2"/>
+                <path
+                  d="M14.6123 13.2676H11.8711L11.1943 12.9874C10.4424 12.7504 9.86589 12.3904 9.46484 11.9073C9.0638 11.4242 8.86328 10.8158 8.86328 10.0821C8.86328 9.42584 9.00911 8.87213 9.30078 8.42096C9.59245 7.96979 10.0072 7.58112 10.5449 7.34869C11.0872 7.11627 11.7275 7.00006 12.4658 7.00006H15.8086L15.8086 17.0001H14.0859L14.0859 8.41412H12.4658C11.8278 8.41412 11.3538 8.56907 11.0439 8.87897C10.734 9.18886 10.5791 9.61725 10.5791 10.1641C10.5791 10.5378 10.6475 10.8591 10.7842 11.128C10.9255 11.3923 11.1328 11.5974 11.4062 11.7432C11.6842 11.8845 12.0283 11.9551 12.4385 11.9551H14.6123V13.2676ZM12.5205 12.502L10.21 17.0001H8.36426L10.7021 12.502H12.5205Z"
+                  fill="#656E73"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_3_2025">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <div class="search-filter1">
+          <div class="search-filter1-item">
+
+            <label for="searchFilterCheckbox1">
+              <input type="checkbox" id="searchFilterCheckbox1">
+              Я участник
+            </label>
+          </div>
+
+          <div class="search-filter1-item">
+            <label for="searchFilterCheckbox2">
+              <input type="checkbox" id="searchFilterCheckbox2">
+              Строгий поиск
+            </label>
+          </div>
+
+          <div class="search-filter1-item">
+            <label for="searchFilterCheckbox3">
+              <input type="checkbox" id="searchFilterCheckbox3">
+              В заголовках
+            </label>
+          </div>
+        </div>
+
+        <div class="search-filter2">
+          <div class="search-filter2-title">Только</div>
+
+          <div class="search-filter2-items">
+            <div class="search-filter2-item">
+              <label for="searchFilterCheckbox4">
+                <input type="checkbox" id="searchFilterCheckbox4">
+                Я участник
+              </label>
+            </div>
+
+            <div class="search-filter2-item">
+              <label for="searchFilterCheckbox5">
+                <input type="checkbox" id="searchFilterCheckbox5">
+                Строгий поиск</label>
+            </div>
+
+            <div class="search-filter2-item">
+              <label for="searchFilterCheckbox6">
+                <input type="checkbox" id="searchFilterCheckbox6">
+                В заголовках</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

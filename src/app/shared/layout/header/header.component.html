@@ -1,0 +1,33 @@
+<div class="container">
+  <header class="header">
+    <div class="header-left">
+      <div class="header-left-block">
+        <app-burger-menu *ngIf="isMobileWindowWidth"></app-burger-menu>
+
+        <a routerLink="/" class="logo">
+          <img src="/assets/assets/images/logo.png" alt="logo">
+        </a>
+      </div>
+
+      <div class="menu">
+        <app-nav-menu *ngIf="!isMobileWindowWidth"></app-nav-menu>
+
+        <div class="parametres" *ngIf="!isMobileWindowWidth">
+          <app-search-input></app-search-input>
+          <app-add-items></app-add-items>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <app-add-items *ngIf="isMobileWindowWidth"></app-add-items>
+      <app-history *ngIf="isMobileWindowWidth"></app-history>
+      <app-search-input-mobile *ngIf="isMobileWindowWidth"></app-search-input-mobile>
+      <app-notification></app-notification>
+
+      <a routerLink="/" class="user-avatar" *ngIf="!isMobileWindowWidth">
+        <img src="/assets/assets/images/ava.png" alt="ava">
+      </a>
+    </div>
+  </header>
+</div>

@@ -1,0 +1,93 @@
+@import "variables";
+
+@mixin checkbox-custom {
+  display: flex;
+  align-items: center;
+  //cursor: pointer;
+
+
+  input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #7f878c;
+    border-radius: 3px;
+    margin: 0 15px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  input[type='checkbox']::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 1px;
+    box-shadow: inset 12px 10px #7f878c;
+    transition: .2s ease transform;
+    transform: scale(0);
+  }
+
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
+  }
+  label {
+    font-size: 14px;
+    color: #2a3033;
+    padding-right: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #78858c;
+    }
+  }
+}
+
+@mixin checkbox-custom-mobile {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  //cursor: pointer;
+
+
+  input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/images/checkbox-choose-no.svg");
+    border-radius: 50%;
+    margin: 0 12px 0 0;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  input[type='checkbox']::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    transition: .2s ease transform;
+    transform: scale(0);
+    background-image: url("../assets/images/checkbox-choose-yes.svg");
+  }
+
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
+  }
+
+  label {
+    font-size: 14px;
+    color: #2a3033;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #78858c;
+    }
+  }
+}
